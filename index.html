@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ココメモ - 思い出を地図に残そう</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .step p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .use-cases h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .use-case-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .use-case-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            color: #666;
+            line-height: 1.8;
+            padding-left: 30px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .benefits h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            padding: 20px;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .benefit-item p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .features h2,
+            .how-it-works h2 {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icon">📍</div>
+            <h1>ココメモ</h1>
+            <p>思い出を地図に残そう</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>主な機能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📌</div>
+                    <h3>かんたん位置記録</h3>
+                    <p>ワンタップで現在地を記録。地図上にピンを追加して、大切な場所を保存できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>メモと写真</h3>
+                    <p>タイトル、説明文、写真を添付してメモを充実。思い出を詳しく残せます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>地図で確認</h3>
+                    <p>Apple Mapsで記録済みメモをピン表示。視覚的に場所を把握できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>タグで整理</h3>
+                    <p>タグで分類して検索も簡単。駐車場、グルメ、旅行など、用途別に管理できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧭</div>
+                    <h3>経路案内</h3>
+                    <p>保存した場所への経路案内もワンタップ。Apple Mapsと連携してナビゲーション。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>プライバシー保護</h3>
+                    <p>すべてのデータは端末内に保存。あなたの位置情報は安全に守られます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>使い方</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>メモを作成</h3>
+                    <p>＋ボタンをタップして、現在地または地図から場所を選択</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>情報を追加</h3>
+                    <p>タイトル、写真、タグを追加してメモを充実</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>いつでも確認</h3>
+                    <p>地図や一覧から過去のメモを確認・編集できます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>こんな時に便利</h2>
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <h3>🚗 駐車場所の記録</h3>
+                    <p>ショッピングモールや大型施設で車を停めた場所を記録。駐車場番号や階数をメモして、すぐに見つけられます。</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>🍜 美味しいお店の記録</h3>
+                    <p>偶然見つけた美味しいお店の場所を写真付きで記録。次回また訪れたい時に、すぐに場所を確認できます。</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>✈️ 旅行の思い出</h3>
+                    <p>旅行先で訪れた場所を写真とメモで記録。後から旅のルートを振り返ったり、友達に共有したりできます。</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>📸 撮影スポット</h3>
+                    <p>景色が綺麗な場所や撮影に適したスポットを記録。季節や時間帯のメモも残しておけば、次回の撮影に役立ちます。</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>🏃 ランニングコース</h3>
+                    <p>お気に入りのランニングコースやトレーニング場所を記録。距離や所要時間をメモして、効率的なトレーニングを。</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>🛍️ お買い物メモ</h3>
+                    <p>セールをしていたお店や、後で買いたいものがある場所を記録。価格や商品名をメモして、計画的にお買い物。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>ココメモを選ぶ理由</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>完全無料</h3>
+                    <p>すべての機能を無料でご利用いただけます。広告もありません。</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>プライバシー重視</h3>
+                    <p>データはすべて端末内に保存。外部への送信は一切ありません。</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>シンプル操作</h3>
+                    <p>直感的なUIで誰でも簡単に使えます。複雑な設定は不要です。</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>オフライン対応</h3>
+                    <p>インターネット接続なしでも完全に動作します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>よくある質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q.</span>
+                        <span>位置情報はどのように利用されますか？</span>
+                    </div>
+                    <div class="faq-answer">
+                        位置情報はメモを作成する際に、ユーザーが選択した場所の座標として端末内にのみ保存されます。外部サーバーへの送信や第三者との共有は一切行いません。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q.</span>
+                        <span>データのバックアップはできますか？</span>
+                    </div>
+                    <div class="faq-answer">
+                        現在はiCloudバックアップに対応しています。iOSの設定でiCloudバックアップを有効にしていれば、アプリのデータも自動的にバックアップされます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q.</span>
+                        <span>メモの数に制限はありますか？</span>
+                    </div>
+                    <div class="faq-answer">
+                        メモの作成数に制限はありません。端末のストレージ容量が許す限り、いくつでもメモを作成できます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q.</span>
+                        <span>写真の容量はどのくらいですか？</span>
+                    </div>
+                    <div class="faq-answer">
+                        写真は自動的に圧縮されて保存されます（品質80%）。1枚あたり数百KB〜数MBの容量になります。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q.</span>
+                        <span>AndroidやWeb版はありますか？</span>
+                    </div>
+                    <div class="faq-answer">
+                        現在はiOS版のみの提供となっています。将来的に他のプラットフォームへの対応も検討しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q.</span>
+                        <span>メモを他の人と共有できますか？</span>
+                    </div>
+                    <div class="faq-answer">
+                        現在、メモの共有機能は搭載していません。各ユーザーのプライバシーを守るため、データは個人の端末内のみで管理されます。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="terms.html">利用規約</a>
+            </div>
+            <p>&copy; 2025 ココメモ. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
