@@ -1,546 +1,1271 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ココメモ - 思い出を地図に残そう</title>
+
+    <!-- SEO基本メタタグ -->
+    <title>PinMark - 地図に残すメモアプリ | 場所の記録・整理・経路案内までこれ一つ</title>
+    <meta name="description" content="【無料】位置メモアプリ PinMark。ワンタップで現在地にメモ・写真を保存。地図上にピン表示で場所を管理。駐車場の記録、お気に入りスポット、旅行の思い出に。オフライン対応・プライバシー重視。">
+    <meta name="keywords" content="PinMark, 位置メモ, 地図メモ, 位置情報, メモアプリ, 地図アプリ, 場所記録, 駐車場記録, 旅行記録, スポット管理, iPhone, Android">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PinMark">
+
+    <!-- hreflang（多言語対応準備） -->
+    <link rel="alternate" hreflang="ja" href="https://cocomemo.app/">
+    <link rel="alternate" hreflang="x-default" href="https://cocomemo.app/">
+
+    <!-- OGP (Open Graph Protocol) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PinMark - 地図に残すメモアプリ | 場所の記録・整理・経路案内までこれ一つ">
+    <meta property="og:description" content="【無料】ワンタップで現在地にメモ・写真を保存。地図上にピン表示で場所を管理。駐車場の記録、お気に入りスポット、旅行の思い出に。">
+    <meta property="og:url" content="https://cocomemo.app/">
+    <meta property="og:site_name" content="PinMark">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PinMark - 地図に残すメモアプリ | 場所の記録・整理・経路案内までこれ一つ">
+    <meta name="twitter:description" content="ワンタップで現在地にメモ・写真を保存。地図上にピン表示で場所を管理。完全無料・オフライン対応。">
+
+    <!-- 構造化データ (JSON-LD) - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PinMark",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS 14.0+, Android 6.0+",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY",
+            "description": "完全無料 - すべての機能を無料でご利用いただけます",
+            "availability": "https://schema.org/InStock"
+        },
+        "description": "地図上の現在地にメモを残せるシンプルな位置メモアプリ。ワンタップで場所を記録し、写真やタグで整理。駐車場の記録、お気に入りスポット、旅行の思い出に。",
+        "featureList": [
+            "ワンタップで現在地を記録",
+            "写真・メモの添付",
+            "地図上にピン表示",
+            "タグによる分類・検索",
+            "経路案内連携",
+            "完全オフライン対応",
+            "データは端末内に保存"
+        ],
+        "inLanguage": ["ja", "en"],
+        "softwareVersion": "1.1.0"
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PinMark",
+        "url": "https://cocomemo.app/",
+        "description": "地図上の現在地にメモを残せるシンプルな位置メモアプリ",
+        "inLanguage": "ja"
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PinMark",
+        "url": "https://cocomemo.app/",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "cocomemo.developer@gmail.com",
+            "contactType": "customer support"
+        }
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "PinMarkは無料で使えますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、PinMarkはすべての機能を完全無料でご利用いただけます。メモの作成数に制限はなく、端末のストレージ容量が許す限り、いくつでもメモを作成できます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "位置情報はどのように利用されますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "位置情報はメモを作成する際に、ユーザーが選択した場所の座標として端末内にのみ保存されます。外部サーバーへの送信や第三者との共有は一切行いません。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "オフラインでも使えますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、PinMarkはインターネット接続なしでも完全に動作します。すべてのデータは端末内に保存されるため、オフライン環境でもメモの作成・閲覧が可能です。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://cocomemo.app/"
+            }
+        ]
+    }
+    </script>
+
     <style>
+        :root {
+            --primary: #2196F3;
+            --primary-dark: #1565c0;
+            --primary-light: #42a5f5;
+            --accent: #4CAF50;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --text-muted: #8a8aa3;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border: #e2e8f0;
+            --gradient: linear-gradient(135deg, #42a5f5 0%, #1976d2 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(33, 150, 243, 0.08) 0%, rgba(25, 118, 210, 0.08) 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-            line-height: 1.6;
-            color: #333;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 var(--radius-sm) 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Navigation */
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 20px 24px;
+        }
+
+        .site-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Hero Section */
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========================
+           Hero Section
+           ======================== */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 24px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .hero-text {
+            flex: 1;
             color: white;
-            padding: 100px 20px 80px;
-            text-align: center;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .hero-icon {
-            font-size: 80px;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 14px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.2s;
+            color: white;
+            margin-bottom: 32px;
         }
 
-        .cta-button:hover {
+        .hero-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Store Badges */
+        .store-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .store-badge {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .store-badge:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            opacity: 0.9;
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 20px;
-            background: #f8f9fa;
+        .store-badge img {
+            height: 48px;
+            width: auto;
         }
 
-        .features h2 {
+        .hero-visual {
+            flex: 0 0 320px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-phone-carousel {
+            position: relative;
+            width: 280px;
+            aspect-ratio: 9 / 19.5;
+        }
+
+        .hero-phone-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-phone-img.active {
+            opacity: 1;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 48px;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                flex: none;
+            }
+
+            .hero-phone-carousel {
+                width: 240px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: auto;
+                padding: 100px 20px 60px;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* ========================
+           Section Common
+           ======================== */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
+            margin-bottom: 64px;
         }
 
-        .feature-grid {
+        .section-label {
+            display: inline-block;
+            background: var(--gradient-soft);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.8;
+        }
+
+        /* ========================
+           Features Section
+           ======================== */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .feature-card {
             background: white;
-            padding: 40px 30px;
-            border-radius: 16px;
+            border-radius: var(--radius-md);
+            padding: 40px 28px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
         }
 
-        .feature-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
+        .feature-icon-wrap {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: var(--gradient-soft);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #667eea;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
         }
 
         .feature-card p {
-            color: #666;
+            font-size: 14px;
+            color: var(--text-secondary);
             line-height: 1.8;
         }
 
-        /* How It Works Section */
-        .how-it-works {
-            padding: 80px 20px;
-            background: white;
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .how-it-works h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .steps {
+        /* ========================
+           How It Works Section
+           ======================== */
+        .steps-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
+            gap: 32px;
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
         }
 
-        .step {
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: var(--border);
+        }
+
+        .step-item {
             flex: 1;
-            min-width: 250px;
             text-align: center;
+            position: relative;
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: #667eea;
-            color: white;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .step-item h3 {
+            font-size: 18px;
             font-weight: 700;
-            margin: 0 auto 20px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
         }
 
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .step p {
-            color: #666;
+        .step-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
             line-height: 1.8;
         }
 
-        /* Use Cases Section */
-        .use-cases {
-            padding: 80px 20px;
-            background: #f8f9fa;
+        @media (max-width: 600px) {
+            .steps-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .steps-container::before {
+                top: 0;
+                bottom: 0;
+                left: 40px;
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+
+            .step-item {
+                display: flex;
+                text-align: left;
+                gap: 24px;
+            }
+
+            .step-number {
+                width: 56px;
+                height: 56px;
+                flex-shrink: 0;
+                margin: 0;
+                font-size: 22px;
+            }
         }
 
-        .use-cases h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
-        }
-
-        .use-case-grid {
+        /* ========================
+           Use Cases Section
+           ======================== */
+        .usecases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .use-case-card {
+        .usecase-card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: var(--radius-md);
+            padding: 32px 24px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
 
-        .use-case-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #667eea;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .usecase-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
         }
 
-        .use-case-card p {
-            color: #666;
+        .usecase-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .usecase-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .usecase-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
             line-height: 1.8;
         }
 
-        /* FAQ Section */
-        .faq {
-            padding: 80px 20px;
-            background: white;
+        @media (max-width: 900px) {
+            .usecases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .faq h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
+        @media (max-width: 600px) {
+            .usecases-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .faq-answer {
-            color: #666;
-            line-height: 1.8;
-            padding-left: 30px;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .benefits h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+        /* ========================
+           Benefits Section
+           ======================== */
+        .benefits-section {
+            background: var(--gradient);
+            padding: 100px 24px;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .benefit-item {
-            padding: 20px;
+        .benefit-card {
+            text-align: center;
+            color: white;
         }
 
-        .benefit-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================
+           FAQ Section
+           ======================== */
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-size: 16px;
             font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: default;
         }
 
-        .benefit-item p {
-            opacity: 0.9;
+        .faq-q-mark {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px 52px;
+            font-size: 15px;
+            color: var(--text-secondary);
             line-height: 1.8;
         }
 
-        /* Footer */
-        .footer {
-            background: #2d3748;
-            color: white;
-            padding: 40px 20px;
+        /* ========================
+           CTA Section
+           ======================== */
+        .cta-section {
             text-align: center;
+            padding: 80px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .cta-title {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .cta-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 36px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+        }
+
+        /* ========================
+           Footer
+           ======================== */
+        .site-footer {
+            background: #1a1a2e;
+            color: rgba(255,255,255,0.7);
+            padding: 48px 24px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
         }
 
         .footer-links {
-            margin-bottom: 20px;
+            display: flex;
+            gap: 24px;
+            list-style: none;
         }
 
         .footer-links a {
-            color: white;
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
-            margin: 0 15px;
-            opacity: 0.8;
-            transition: opacity 0.2s;
+            font-size: 14px;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            opacity: 1;
+            color: white;
         }
 
-        .footer p {
-            opacity: 0.7;
-            font-size: 0.9rem;
+        .footer-copy {
+            width: 100%;
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+        /* ========================
+           Animations
+           ======================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ========================
+           Dark Mode
+           ======================== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #e8e8f0;
+                --text-secondary: #a0a0b8;
+                --text-muted: #6a6a82;
+                --bg-primary: #0f0f1a;
+                --bg-secondary: #1a1a2e;
+                --bg-tertiary: #252540;
+                --border: #2a2a45;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .feature-card,
+            .usecase-card {
+                background: var(--bg-secondary);
             }
 
-            .features h2,
-            .how-it-works h2 {
-                font-size: 2rem;
+            .faq-item {
+                background: var(--bg-secondary);
             }
 
-            .feature-grid {
-                grid-template-columns: 1fr;
+
+            .cta-section {
+                background: var(--bg-secondary);
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-icon">📍</div>
-            <h1>ココメモ</h1>
-            <p>思い出を地図に残そう</p>
-        </div>
-    </section>
+    <!-- アクセシビリティ: スキップリンク -->
+    <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>主な機能</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📌</div>
-                    <h3>かんたん位置記録</h3>
-                    <p>ワンタップで現在地を記録。地図上にピンを追加して、大切な場所を保存できます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>メモと写真</h3>
-                    <p>タイトル、説明文、写真を添付してメモを充実。思い出を詳しく残せます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🗺️</div>
-                    <h3>地図で確認</h3>
-                    <p>Apple Mapsで記録済みメモをピン表示。視覚的に場所を把握できます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏷️</div>
-                    <h3>タグで整理</h3>
-                    <p>タグで分類して検索も簡単。駐車場、グルメ、旅行など、用途別に管理できます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧭</div>
-                    <h3>経路案内</h3>
-                    <p>保存した場所への経路案内もワンタップ。Apple Mapsと連携してナビゲーション。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>プライバシー保護</h3>
-                    <p>すべてのデータは端末内に保存。あなたの位置情報は安全に守られます。</p>
-                </div>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="site-nav" aria-label="メインナビゲーション">
+            <div class="nav-container">
+                <a href="/" class="nav-logo" aria-label="PinMark ホーム">PinMark</a>
+                <ul class="nav-links">
+                    <li><a href="#features">機能</a></li>
+                    <li><a href="#how-it-works">使い方</a></li>
+                    <li><a href="#use-cases">活用例</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>使い方</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>メモを作成</h3>
-                    <p>＋ボタンをタップして、現在地または地図から場所を選択</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>情報を追加</h3>
-                    <p>タイトル、写真、タグを追加してメモを充実</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>いつでも確認</h3>
-                    <p>地図や一覧から過去のメモを確認・編集できます</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section class="use-cases">
-        <div class="container">
-            <h2>こんな時に便利</h2>
-            <div class="use-case-grid">
-                <div class="use-case-card">
-                    <h3>🚗 駐車場所の記録</h3>
-                    <p>ショッピングモールや大型施設で車を停めた場所を記録。駐車場番号や階数をメモして、すぐに見つけられます。</p>
-                </div>
-                <div class="use-case-card">
-                    <h3>🍜 美味しいお店の記録</h3>
-                    <p>偶然見つけた美味しいお店の場所を写真付きで記録。次回また訪れたい時に、すぐに場所を確認できます。</p>
-                </div>
-                <div class="use-case-card">
-                    <h3>✈️ 旅行の思い出</h3>
-                    <p>旅行先で訪れた場所を写真とメモで記録。後から旅のルートを振り返ったり、友達に共有したりできます。</p>
-                </div>
-                <div class="use-case-card">
-                    <h3>📸 撮影スポット</h3>
-                    <p>景色が綺麗な場所や撮影に適したスポットを記録。季節や時間帯のメモも残しておけば、次回の撮影に役立ちます。</p>
-                </div>
-                <div class="use-case-card">
-                    <h3>🏃 ランニングコース</h3>
-                    <p>お気に入りのランニングコースやトレーニング場所を記録。距離や所要時間をメモして、効率的なトレーニングを。</p>
-                </div>
-                <div class="use-case-card">
-                    <h3>🛍️ お買い物メモ</h3>
-                    <p>セールをしていたお店や、後で買いたいものがある場所を記録。価格や商品名をメモして、計画的にお買い物。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <div class="container">
-            <h2>ココメモを選ぶ理由</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>完全無料</h3>
-                    <p>すべての機能を無料でご利用いただけます。</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>プライバシー重視</h3>
-                    <p>データはすべて端末内に保存。外部への送信は一切ありません。</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>シンプル操作</h3>
-                    <p>直感的なUIで誰でも簡単に使えます。複雑な設定は不要です。</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>オフライン対応</h3>
-                    <p>インターネット接続なしでも完全に動作します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>よくある質問</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q.</span>
-                        <span>位置情報はどのように利用されますか？</span>
+    <main id="main">
+        <!-- ========================
+             Hero Section
+             ======================== -->
+        <section class="hero" aria-label="PinMark紹介">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span>&#x1F4CD;</span> 完全無料・オフライン対応
                     </div>
-                    <div class="faq-answer">
-                        位置情報はメモを作成する際に、ユーザーが選択した場所の座標として端末内にのみ保存されます。外部サーバーへの送信や第三者との共有は一切行いません。
+                    <h1 class="hero-title">大切な場所を<br>地図にメモ</h1>
+                    <p class="hero-subtitle">ワンタップで現在地をメモ。写真やタグで整理して、お気に入りの場所をいつでも振り返れるアプリです。</p>
+                    <div class="hero-actions">
+                        <div class="store-badges">
+                            <a href="https://apps.apple.com/jp/app/%E3%82%B3%E3%82%B3%E3%83%A1%E3%83%A2-%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1%E4%BB%98%E3%81%8D%E3%83%A1%E3%83%A2%E5%B8%B3/id6754334179" class="store-badge" aria-label="App Storeでダウンロード">
+                                <img src="image/ios-badge.svg" alt="App Storeからダウンロード" height="48">
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sikakou.cocomemo&hl=ja" class="store-badge" aria-label="Google Playで手に入れよう">
+                                <img src="image/android-badge.svg" alt="Google Playで手に入れよう" height="48">
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q.</span>
-                        <span>データのバックアップはできますか？</span>
-                    </div>
-                    <div class="faq-answer">
-                        現在はiCloudバックアップに対応しています。iOSの設定でiCloudバックアップを有効にしていれば、アプリのデータも自動的にバックアップされます。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q.</span>
-                        <span>メモの数に制限はありますか？</span>
-                    </div>
-                    <div class="faq-answer">
-                        メモの作成数に制限はありません。端末のストレージ容量が許す限り、いくつでもメモを作成できます。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q.</span>
-                        <span>写真の容量はどのくらいですか？</span>
-                    </div>
-                    <div class="faq-answer">
-                        写真は自動的に圧縮されて保存されます（品質80%）。1枚あたり数百KB〜数MBの容量になります。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q.</span>
-                        <span>AndroidやWeb版はありますか？</span>
-                    </div>
-                    <div class="faq-answer">
-                        現在はiOS版のみの提供となっています。将来的に他のプラットフォームへの対応も検討しています。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q.</span>
-                        <span>メモを他の人と共有できますか？</span>
-                    </div>
-                    <div class="faq-answer">
-                        現在、メモの共有機能は搭載していません。各ユーザーのプライバシーを守るため、データは個人の端末内のみで管理されます。
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-phone-carousel">
+                        <img src="image/top.png" alt="PinMark アプリ画面" class="hero-phone-img active">
+                        <img src="image/top2.png" alt="PinMark アプリ画面" class="hero-phone-img">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">プライバシーポリシー</a>
-                <a href="terms.html">利用規約</a>
+        <!-- ========================
+             Features Section
+             ======================== -->
+        <section id="features" class="section section-alt" aria-label="主な機能">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">FEATURES</span>
+                    <h2 class="section-title">主な機能</h2>
+                    <p class="section-desc">シンプルな操作で、場所の記録をもっと便利に</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">&#x1F4CC;</div>
+                        <h3>かんたん位置記録</h3>
+                        <p>ワンタップで現在地を記録。地図上にピンを追加して、大切な場所を保存できます。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">&#x1F4DD;</div>
+                        <h3>メモと写真</h3>
+                        <p>タイトル、説明文、複数の写真を添付してメモを充実。思い出を詳しく残せます。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">&#x1F5FA;&#xFE0F;</div>
+                        <h3>地図で確認</h3>
+                        <p>記録済みメモをピン表示。地図上で視覚的に場所を把握できます。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">&#x1F3F7;&#xFE0F;</div>
+                        <h3>タグで整理</h3>
+                        <p>タグで分類して検索もかんたん。駐車場、グルメ、旅行など、用途別に管理できます。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">&#x1F9ED;</div>
+                        <h3>経路案内</h3>
+                        <p>保存した場所への経路案内もワンタップ。地図アプリと連携してナビゲーション。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap">&#x1F512;</div>
+                        <h3>プライバシー保護</h3>
+                        <p>すべてのデータは端末内に保存。あなたの位置情報は安全に守られます。</p>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2025 ココメモ. All rights reserved.</p>
+        </section>
+
+        <!-- ========================
+             How It Works Section
+             ======================== -->
+        <section id="how-it-works" class="section" aria-label="使い方">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">HOW IT WORKS</span>
+                    <h2 class="section-title">かんたん3ステップ</h2>
+                    <p class="section-desc">直感的な操作で、すぐに使いはじめられます</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h3>メモを作成</h3>
+                            <p>+ボタンをタップして、現在地または地図から場所を選択</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h3>情報を追加</h3>
+                            <p>タイトル、写真、タグを追加してメモを充実させましょう</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3>いつでも確認</h3>
+                            <p>地図や一覧から過去のメモを確認・編集できます</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Use Cases Section
+             ======================== -->
+        <section id="use-cases" class="section section-alt" aria-label="活用例">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">USE CASES</span>
+                    <h2 class="section-title">こんな時に便利</h2>
+                    <p class="section-desc">日常のあらゆるシーンで、場所の記録が役立ちます</p>
+                </div>
+                <div class="usecases-grid">
+                    <div class="usecase-card">
+                        <div class="usecase-icon">&#x1F697;</div>
+                        <h3>駐車場所の記録</h3>
+                        <p>大型施設で車を停めた場所を記録。階数や番号もメモして、すぐに見つけられます。</p>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="usecase-icon">&#x1F35C;</div>
+                        <h3>美味しいお店</h3>
+                        <p>偶然見つけたお店を写真付きで記録。次回また訪れたい時に、すぐに場所を確認。</p>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="usecase-icon">&#x2708;&#xFE0F;</div>
+                        <h3>旅行の思い出</h3>
+                        <p>旅行先で訪れた場所を写真とメモで記録。後から旅のルートを振り返れます。</p>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="usecase-icon">&#x1F4F8;</div>
+                        <h3>撮影スポット</h3>
+                        <p>景色が綺麗な場所を記録。季節や時間帯のメモも残しておけば、次回に役立ちます。</p>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="usecase-icon">&#x1F3C3;</div>
+                        <h3>ランニングコース</h3>
+                        <p>お気に入りのコースやスポットを記録。距離や所要時間をメモして効率的に。</p>
+                    </div>
+                    <div class="usecase-card">
+                        <div class="usecase-icon">&#x1F6CD;&#xFE0F;</div>
+                        <h3>お買い物メモ</h3>
+                        <p>セール中のお店や後で買いたいものがある場所を記録。計画的にお買い物。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Benefits Section
+             ======================== -->
+        <section class="benefits-section" aria-label="PinMarkを選ぶ理由">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" style="color: white;">PinMarkを選ぶ理由</h2>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">&#x1F4B0;</div>
+                        <h3>完全無料</h3>
+                        <p>すべての機能を無料でご利用いただけます</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">&#x1F6E1;&#xFE0F;</div>
+                        <h3>プライバシー重視</h3>
+                        <p>データはすべて端末内に保存。外部への送信は一切ありません</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">&#x270C;&#xFE0F;</div>
+                        <h3>シンプル操作</h3>
+                        <p>直感的なUIで誰でも簡単に使えます</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">&#x1F4F6;</div>
+                        <h3>オフライン対応</h3>
+                        <p>ネット接続なしでも完全に動作します</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             FAQ Section
+             ======================== -->
+        <section id="faq" class="section" aria-label="よくある質問">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">FAQ</span>
+                    <h2 class="section-title">よくある質問</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-q-mark">Q</span>
+                            <span>位置情報はどのように利用されますか？</span>
+                        </div>
+                        <div class="faq-answer">
+                            位置情報はメモを作成する際に、ユーザーが選択した場所の座標として端末内にのみ保存されます。外部サーバーへの送信や第三者との共有は一切行いません。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-q-mark">Q</span>
+                            <span>メモの数に制限はありますか？</span>
+                        </div>
+                        <div class="faq-answer">
+                            メモの作成数に制限はありません。端末のストレージ容量が許す限り、いくつでもメモを作成できます。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-q-mark">Q</span>
+                            <span>オフラインでも使えますか？</span>
+                        </div>
+                        <div class="faq-answer">
+                            はい、インターネット接続なしでも完全に動作します。すべてのデータは端末内に保存されるため、オフライン環境でもメモの作成・閲覧が可能です。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="faq-q-mark">Q</span>
+                            <span>メモを他の人と共有できますか？</span>
+                        </div>
+                        <div class="faq-answer">
+                            写真の共有機能を搭載しています。メモの詳細画面から写真をプレビューし、共有ボタンから他のアプリへ送信できます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             CTA Section
+             ======================== -->
+        <section class="cta-section" aria-label="ダウンロード">
+            <h2 class="cta-title">今すぐ、場所の記録をはじめよう</h2>
+            <p class="cta-desc">完全無料・登録不要ですぐに使えます</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/jp/app/%E3%82%B3%E3%82%B3%E3%83%A1%E3%83%A2-%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1%E4%BB%98%E3%81%8D%E3%83%A1%E3%83%A2%E5%B8%B3/id6754334179" class="store-badge" aria-label="App Storeでダウンロード">
+                    <img src="image/ios-badge.svg" alt="App Storeからダウンロード" height="48">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.sikakou.cocomemo&hl=ja" class="store-badge" aria-label="Google Playで手に入れよう">
+                    <img src="image/android-badge.svg" alt="Google Playで手に入れよう" height="48">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================
+         Footer
+         ======================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">PinMark</div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="terms.html">利用規約</a></li>
+            </ul>
+            <div class="footer-copy">&copy; 2026 PinMark. All rights reserved.</div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            var imgs = document.querySelectorAll('.hero-phone-carousel .hero-phone-img');
+            if (imgs.length < 2) return;
+            var current = 0;
+            setInterval(function() {
+                imgs[current].classList.remove('active');
+                current = (current + 1) % imgs.length;
+                imgs[current].classList.add('active');
+            }, 4000);
+        })();
+    </script>
 </body>
+
 </html>

@@ -1,225 +1,252 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>プライバシーポリシー - ココメモ</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: white;
-            min-height: 100vh;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #667eea;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .last-updated {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        ul {
-            margin-bottom: 20px;
-            padding-left: 30px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .contact {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            .container {
-                padding: 20px 15px;
-            }
-        }
-    </style>
+    <meta name="description" content="ココメモのプライバシーポリシー。位置情報・写真データの取り扱い、広告表示、セキュリティについて説明します。">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="common.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>プライバシーポリシー</h1>
-        <p class="last-updated">最終更新日: 2025年10月29日</p>
+    <!-- メインコンテンツ -->
+    <main id="main">
+        <div class="container">
+            <div class="content">
+                <h1>プライバシーポリシー</h1>
+                <p class="last-updated">最終更新日: 2026年3月2日</p>
 
-        <div class="section">
-            <p>ココメモ（以下「本アプリ」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に最大限の注意を払っています。本プライバシーポリシーでは、本アプリがどのように情報を収集、使用、保護するかについて説明します。</p>
-        </div>
+                <!-- 目次 -->
+                <nav class="toc" aria-label="目次">
+                    <h2>目次</h2>
+                    <ul>
+                        <li><a href="#sec1">1. 対応プラットフォーム</a></li>
+                        <li><a href="#sec2">2. 収集する情報</a></li>
+                        <li><a href="#sec3">3. 情報の保存場所</a></li>
+                        <li><a href="#sec4">4. 位置情報の使用目的</a></li>
+                        <li><a href="#sec5">5. 位置情報へのアクセス権限</a></li>
+                        <li><a href="#sec6">6. 写真・動画へのアクセス権限</a></li>
+                        <li><a href="#sec7">7. 広告について（Google AdMob）</a></li>
+                        <li><a href="#sec8">8. 第三者サービスの利用</a></li>
+                        <li><a href="#sec9">9. データの削除</a></li>
+                        <li><a href="#sec10">10. セキュリティ</a></li>
+                        <li><a href="#sec11">11. プライバシーポリシーの変更</a></li>
+                        <li><a href="#sec12">12. お問い合わせ</a></li>
+                    </ul>
+                </nav>
 
-        <div class="section">
-            <h2>1. 収集する情報</h2>
-            <p>本アプリは以下の情報を収集します：</p>
-            <ul>
-                <li><strong>位置情報：</strong>ユーザーが明示的に記録を選択した場合のみ、GPS座標（緯度・経度）を取得します</li>
-                <li><strong>写真：</strong>ユーザーが選択した写真のみを保存します</li>
-                <li><strong>テキスト情報：</strong>ユーザーが入力したタイトル、メモ、タグ</li>
-                <li><strong>住所情報：</strong>位置情報から逆ジオコーディングにより取得した住所</li>
-            </ul>
-        </div>
+                <p>ココメモ（以下「本アプリ」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に最大限の注意を払っています。本プライバシーポリシーでは、本アプリがどのように情報を収集、使用、保護するかについて説明します。</p>
 
-        <div class="section">
-            <h2>2. 情報の保存場所</h2>
-            <p>本アプリで作成されたすべてのデータは、ユーザーの端末内にローカル保存されます。以下の点を保証します：</p>
-            <ul>
-                <li>外部サーバーへのデータ送信は一切行いません</li>
-                <li>第三者とのデータ共有は行いません</li>
-                <li>ユーザーのデータは完全にプライベートです</li>
-                <li>インターネット接続なしでも完全に機能します</li>
-            </ul>
-        </div>
+                <h2 id="sec1">1. 対応プラットフォーム</h2>
+                <p>本アプリは、iOSとAndroidの両方を提供しており、それぞれのプラットフォームに応じたプライバシー保護の仕組みを実装しています。</p>
 
-        <div class="section">
-            <h2>3. 位置情報の使用目的</h2>
-            <p>位置情報は以下の目的でのみ使用されます：</p>
-            <ul>
-                <li>ユーザーが選択した場所にメモを記録するため</li>
-                <li>地図上にメモの位置を表示するため</li>
-                <li>住所情報を取得するため（Apple提供のジオコーディングサービスを使用）</li>
-                <li>保存した場所への経路案内を提供するため</li>
-            </ul>
-        </div>
+                <h3>【iOS】</h3>
+                <ul>
+                    <li>Apple Inc.のプライバシーガイドラインに準拠しています</li>
+                    <li>App Tracking Transparency（ATT）フレームワークを実装しています</li>
+                    <li>iOS 14.0以降に対応しています</li>
+                </ul>
 
-        <div class="section">
-            <h2>4. 位置情報へのアクセス権限</h2>
-            <ul>
-                <li>位置情報へのアクセスは、初回起動時にユーザーの許可を求めます</li>
-                <li>ユーザーはいつでもiOSの設定から位置情報の権限を変更できます</li>
-                <li>位置情報の取得は、ユーザーがメモ作成時に「現在地を取得」を選択した場合のみ実行されます</li>
-                <li>バックグラウンドでの位置情報追跡は行いません</li>
-            </ul>
-        </div>
+                <h3>【Android】</h3>
+                <ul>
+                    <li>Google LLCのプライバシーポリシーに準拠しています</li>
+                    <li>Android 13以降の権限管理システムに対応しています</li>
+                    <li>Android 6.0（API level 23）以降に対応しています</li>
+                </ul>
 
-        <div class="section">
-            <h2>5. 写真へのアクセス権限</h2>
-            <ul>
-                <li>カメラとフォトライブラリへのアクセスは、メモに写真を追加する際にのみ要求されます</li>
-                <li>ユーザーが選択した写真のみが端末内に保存されます</li>
-                <li>保存された写真は端末外に送信されることはありません</li>
-            </ul>
-        </div>
+                <p>以下の説明において、プラットフォーム固有の内容については【iOS】【Android】と明記しています。</p>
 
-        <div class="section">
-            <h2>6. 広告について（Google AdMob）</h2>
-            <p>本アプリは、無料でサービスを提供するため、Google AdMob による広告を表示しています。</p>
+                <h2 id="sec2">2. 収集する情報</h2>
+                <p>本アプリは以下の情報を収集します：</p>
+                <ul>
+                    <li><strong>位置情報：</strong>ユーザーが明示的に記録を選択した場合のみ、GPS座標（緯度・経度）を取得します</li>
+                    <li><strong>写真・動画：</strong>ユーザーが選択した写真および動画のみを保存します</li>
+                    <li><strong>テキスト情報：</strong>ユーザーが入力したタイトル、メモ、タグ</li>
+                    <li><strong>住所情報：</strong>位置情報から逆ジオコーディングにより取得した住所</li>
+                </ul>
+                <p>また、本アプリにはメモのテキストや住所をクリップボードにコピーする機能があります。コピーされたデータは端末のクリップボードに保存され、ユーザーが他のアプリで貼り付ける際に使用できます。クリップボードへのコピーは外部への送信には該当しません。</p>
 
-            <h3 style="font-size: 1.2rem; margin-top: 20px; margin-bottom: 15px; color: #555;">6.1 AdMobによる情報収集</h3>
-            <p>AdMobは、広告配信の最適化のために以下の情報を収集する場合があります：</p>
-            <ul>
-                <li><strong>広告識別子（IDFA）：</strong>デバイスを識別するための一意のID</li>
-                <li><strong>デバイス情報：</strong>機種名、OS バージョン、画面サイズなど</li>
-                <li><strong>IPアドレス：</strong>おおよその位置情報の推定に使用</li>
-                <li><strong>広告インタラクション：</strong>広告の表示回数やクリック情報</li>
-            </ul>
+                <h2 id="sec3">3. 情報の保存場所</h2>
+                <p>本アプリで作成されたすべてのデータは、ユーザーの端末内にローカル保存されます。以下の点を保証します：</p>
+                <ul>
+                    <li>外部サーバーへのデータ送信は一切行いません</li>
+                    <li>第三者とのデータ共有は行いません</li>
+                    <li>ユーザーのデータは完全にプライベートです</li>
+                    <li>インターネット接続なしでも主要機能は動作します（ただし、地図表示やアプリの更新確認にはインターネット接続が必要です）</li>
+                </ul>
 
-            <h3 style="font-size: 1.2rem; margin-top: 20px; margin-bottom: 15px; color: #555;">6.2 App Tracking Transparency（ATT）</h3>
-            <p>iOS 14.5以降では、アプリ起動時にトラッキング許可のダイアログが表示されます：</p>
-            <ul>
-                <li><strong>許可する：</strong>パーソナライズされた広告が表示されます</li>
-                <li><strong>許可しない：</strong>非パーソナライズ広告が表示されます</li>
-            </ul>
-            <p>トラッキングの許可・拒否は、アプリの主要機能（メモ作成、地図表示など）には一切影響しません。いつでもiOSの設定から変更できます。</p>
+                <h3>アプリの更新について</h3>
+                <p>本アプリは、機能改善や不具合修正のため、起動時にアプリの更新を確認する場合があります。この際、更新の有無を確認するためにサーバーと通信が発生しますが、ユーザーの個人データが送信されることはありません。</p>
 
-            <h3 style="font-size: 1.2rem; margin-top: 20px; margin-bottom: 15px; color: #555;">6.3 AdMobのプライバシーポリシー</h3>
-            <p>AdMobのデータ使用に関する詳細は、以下をご確認ください：</p>
-            <ul>
-                <li><a href="https://policies.google.com/privacy" style="color: #667eea; text-decoration: none;">Google プライバシーポリシー</a></li>
-                <li><a href="https://support.google.com/admob/answer/6128543" style="color: #667eea; text-decoration: none;">AdMob ヘルプセンター</a></li>
-            </ul>
-        </div>
+                <h3>【iOS】</h3>
+                <ul>
+                    <li>データはアプリのサンドボックス内に保存されます</li>
+                    <li>他のアプリからのアクセスは不可能です</li>
+                    <li>iOSのセキュリティ機能により保護されます</li>
+                </ul>
 
-        <div class="section">
-            <h2>7. 第三者サービスの利用</h2>
-            <p>本アプリは以下のApple提供サービスも利用します：</p>
-            <ul>
-                <li><strong>Apple MapKit：</strong>地図表示と経路案内に使用されます</li>
-                <li><strong>Core Location：</strong>位置情報の取得に使用されます</li>
-                <li><strong>ジオコーディングサービス：</strong>座標から住所への変換に使用されます</li>
-            </ul>
-            <p>これらのサービスの利用は、Appleのプライバシーポリシーに準拠します。</p>
-        </div>
+                <h3>【Android】</h3>
+                <ul>
+                    <li>データはアプリの内部ストレージに保存されます</li>
+                    <li>他のアプリからのアクセスは不可能です</li>
+                    <li>Androidのセキュリティ機能により保護されます</li>
+                </ul>
 
-        <div class="section">
-            <h2>8. データの削除</h2>
-            <p>ユーザーは以下の方法でデータを削除できます：</p>
-            <ul>
-                <li>個別のメモを削除する：アプリ内の削除機能を使用</li>
-                <li>すべてのデータを削除する：アプリをアンインストール</li>
-            </ul>
-            <p>アプリのアンインストール後は、すべてのデータが端末から完全に削除されます。</p>
-        </div>
+                <h2 id="sec4">4. 位置情報の使用目的</h2>
+                <p>位置情報は以下の目的でのみ使用されます：</p>
+                <ul>
+                    <li>ユーザーが選択した場所にメモを記録するため</li>
+                    <li>地図上にメモの位置を表示するため</li>
+                    <li>保存した場所への経路案内を提供するため</li>
+                </ul>
 
-        <div class="section">
-            <h2>9. セキュリティ</h2>
-            <p>本アプリは以下のセキュリティ対策を実施しています：</p>
-            <ul>
-                <li>すべてのデータは端末内のサンドボックス環境に保存されます</li>
-                <li>他のアプリからのアクセスは不可能です</li>
-            </ul>
-        </div>
+                <h3>【iOS】</h3>
+                <ul>
+                    <li>Apple提供のCore Locationフレームワークを使用して位置情報を取得します</li>
+                    <li>Apple提供のジオコーディングサービスを使用して住所情報を取得します</li>
+                </ul>
 
-        <div class="section">
-            <h2>10. プライバシーポリシーの変更</h2>
-            <p>本プライバシーポリシーは、必要に応じて更新されることがあります。重要な変更がある場合は、アプリ内で通知します。</p>
-        </div>
+                <h3>【Android】</h3>
+                <ul>
+                    <li>Google提供のLocation Servicesを使用して位置情報を取得します</li>
+                    <li>Google提供のGeocoding APIを使用して住所情報を取得します</li>
+                </ul>
 
-        <div class="section">
-            <h2>11. お問い合わせ</h2>
-            <div class="contact">
+                <h2 id="sec5">5. 位置情報へのアクセス権限</h2>
+                <p>位置情報へのアクセスは、初回起動時にユーザーの許可を求めます。位置情報の取得は、ユーザーがメモ作成時に「現在地を取得」を選択した場合のみ実行されます。バックグラウンドでの位置情報追跡は行いません。</p>
+
+                <h3>【iOS】</h3>
+                <ul>
+                    <li>ユーザーはいつでもiOSの「設定」>「プライバシーとセキュリティ」>「位置情報サービス」から権限を変更できます</li>
+                </ul>
+
+                <h3>【Android】</h3>
+                <ul>
+                    <li>ユーザーはいつでもAndroidの「設定」>「アプリ」>「権限」>「位置情報」から権限を変更できます</li>
+                </ul>
+
+                <h2 id="sec6">6. 写真・動画へのアクセス権限</h2>
+                <p>カメラとフォトライブラリへのアクセスは、メモに写真や動画を追加する際にのみ要求されます。ユーザーが選択した写真・動画は端末内に保存されます。ユーザーの明示的な操作なく端末外に送信されることはありません。</p>
+                <p>なお、本アプリにはOS標準の共有機能を利用した共有ボタンがあります。ユーザーが共有ボタンを使用して明示的に共有を選択した場合、写真・動画はOSの共有シートを通じて外部のアプリやサービスに送信されます。共有先のアプリやサービスにおけるデータの取り扱いは、当該サービスのプライバシーポリシーに従います。</p>
+
+                <h3>マイクへのアクセス権限</h3>
+                <p>動画撮影時に音声を録音するため、マイクへのアクセス許可を求める場合があります。マイクは動画撮影時にのみ使用され、録音された音声は動画ファイルの一部として端末内に保存されます。</p>
+
+                <h3>【iOS】</h3>
+                <ul>
+                    <li>写真ライブラリへのアクセス：「選択した写真」または「すべての写真」を選択できます</li>
+                    <li>カメラへのアクセス：写真撮影時に許可を求めます</li>
+                    <li>ユーザーはiOSの「設定」>「プライバシーとセキュリティ」>「写真」または「カメラ」から権限を変更できます</li>
+                </ul>
+
+                <h3>【Android】</h3>
+                <ul>
+                    <li>Android 13以降：写真とビデオへの詳細な権限管理が可能です（選択したメディアのみ許可）</li>
+                    <li>Android 12以前：ストレージへのアクセス許可を求めます</li>
+                    <li>カメラへのアクセス：写真撮影時に許可を求めます</li>
+                    <li>ユーザーはAndroidの「設定」>「アプリ」>「権限」から権限を変更できます</li>
+                </ul>
+
+                <h2 id="sec7">7. 広告について（Google AdMob）</h2>
+                <p>本アプリは、無料でサービスを提供するため、Google AdMob による広告を表示しています。</p>
+
+                <h3>7.1 AdMobによる情報収集</h3>
+                <p>AdMobは、広告配信の最適化のために以下の情報を収集する場合があります：</p>
+                <ul>
+                    <li><strong>デバイス情報：</strong>機種名、OS バージョン、画面サイズなど</li>
+                    <li><strong>IPアドレス：</strong>おおよその位置情報の推定に使用</li>
+                    <li><strong>広告インタラクション：</strong>広告の表示回数やクリック情報</li>
+                </ul>
+
+                <h3>【iOS】広告識別子とトラッキング管理</h3>
+                <ul>
+                    <li><strong>広告識別子（IDFA）：</strong>デバイスを識別するための一意のIDです</li>
+                    <li><strong>App Tracking Transparency（ATT）：</strong>iOS 14.5以降では、アプリ起動時にトラッキング許可のダイアログが表示されます</li>
+                    <li><strong>「許可」を選択：</strong>パーソナライズされた広告が表示されます</li>
+                    <li><strong>「Appにトラッキングしないように要求」を選択：</strong>非パーソナライズ広告が表示されます</li>
+                    <li>いつでもiOSの「設定」>「プライバシーとセキュリティ」>「トラッキング」から変更できます</li>
+                </ul>
+
+                <h3>【Android】広告IDと広告設定</h3>
+                <ul>
+                    <li><strong>広告ID（AAID）：</strong>デバイスを識別するための一意のIDです</li>
+                    <li>Androidの「設定」>「Google」>「広告」から広告のパーソナライゼーションを管理できます</li>
+                    <li>「広告IDをリセット」を選択すると、新しい広告IDが生成されます</li>
+                    <li>「広告のパーソナライゼーションをオプトアウト」を選択すると、非パーソナライズ広告が表示されます</li>
+                </ul>
+
+                <div class="highlight">
+                    <strong>重要</strong>
+                    トラッキングの許可・拒否は、アプリの主要機能（メモ作成、地図表示など）には一切影響しません。
+                </div>
+
+                <h3>7.3 AdMobのプライバシーポリシー</h3>
+                <p>AdMobのデータ使用に関する詳細は、以下をご確認ください：</p>
+                <ul>
+                    <li><a href="https://policies.google.com/privacy">Google プライバシーポリシー</a></li>
+                    <li><a href="https://support.google.com/admob/answer/6128543">AdMob ヘルプセンター</a></li>
+                </ul>
+
+                <h2 id="sec8">8. 第三者サービスの利用</h2>
+                <p>本アプリは以下のプラットフォーム提供サービスも利用します：</p>
+
+                <h3>【iOS】Apple提供サービス</h3>
+                <ul>
+                    <li><strong>Apple MapKit：</strong>地図表示と経路案内に使用されます</li>
+                    <li><strong>Core Location：</strong>位置情報の取得に使用されます</li>
+                    <li><strong>ジオコーディングサービス：</strong>座標から住所への変換に使用されます</li>
+                </ul>
+                <p>これらのサービスの利用は、<a href="https://www.apple.com/jp/privacy/">Appleのプライバシーポリシー</a>に準拠します。</p>
+
+                <h3>【Android】Google提供サービス</h3>
+                <ul>
+                    <li><strong>Google Maps API：</strong>地図表示と経路案内に使用されます</li>
+                    <li><strong>Google Location Services：</strong>位置情報の取得に使用されます</li>
+                    <li><strong>Google Geocoding API：</strong>座標から住所への変換に使用されます</li>
+                </ul>
+                <p>これらのサービスの利用は、<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>に準拠します。</p>
+
+                <h2 id="sec9">9. データの削除</h2>
+                <p>ユーザーは以下の方法でデータを削除できます：</p>
+                <ul>
+                    <li>個別のメモを削除する：アプリ内の削除機能を使用</li>
+                    <li>すべてのデータを削除する：アプリをアンインストール</li>
+                </ul>
+                <p>アプリのアンインストール後は、すべてのデータが端末から完全に削除されます。</p>
+
+                <h2 id="sec10">10. セキュリティ</h2>
+                <p>本アプリは以下のセキュリティ対策を実施しています：</p>
+
+                <h3>【iOS】</h3>
+                <ul>
+                    <li>すべてのデータはiOSのサンドボックス環境に保存されます</li>
+                    <li>他のアプリからのアクセスは不可能です</li>
+                    <li>iOSのData Protection APIにより、デバイスロック時にデータが暗号化されます</li>
+                    <li>Keychain（キーチェーン）を使用した安全な認証情報の保存（該当する場合）</li>
+                </ul>
+
+                <h3>【Android】</h3>
+                <ul>
+                    <li>すべてのデータはAndroidのアプリ専用ストレージに保存されます</li>
+                    <li>他のアプリからのアクセスは不可能です</li>
+                    <li>Android 6.0以降のFull Disk Encryptionにより、データが暗号化されます</li>
+                    <li>Android Keystoreを使用した安全な認証情報の保存（該当する場合）</li>
+                </ul>
+
+                <h2 id="sec11">11. プライバシーポリシーの変更</h2>
+                <p>本プライバシーポリシーは、必要に応じて更新されることがあります。重要な変更がある場合は、アプリ内で通知します。</p>
+
+                <h2 id="sec12">12. お問い合わせ</h2>
                 <p>本プライバシーポリシーに関するご質問やご不明な点がございましたら、以下の連絡先までお問い合わせください。</p>
-                <p><strong>アプリ名：</strong>ココメモ</p>
-                <p><strong>お問い合わせ先：</strong>cocomemo.developer@gmail.com</p>
+                <div class="highlight">
+                    <strong>お問い合わせ先</strong>
+                    <p><a href="mailto:cocomemo.developer@gmail.com">cocomemo.developer@gmail.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
+
 </html>
